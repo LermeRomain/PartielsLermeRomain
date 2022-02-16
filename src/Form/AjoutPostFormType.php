@@ -3,6 +3,7 @@
 namespace App\Form;
 
 use App\Entity\Post;
+use Doctrine\DBAL\Types\IntegerType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
@@ -16,6 +17,13 @@ class AjoutPostFormType extends AbstractType
         $builder
             ->add('name', TextareaType::class)
             ->add('publier', SubmitType::class)
+            ->add('duree', TextareaType::class, [
+                'required'=>true,
+                'attr'=>[
+                    'placeholder'=>'Entrer une durée entre 1 et 180',
+                ]
+            ])
+
         ;
     }
 

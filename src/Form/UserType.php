@@ -16,15 +16,12 @@ class UserType extends AbstractType
     {
         $builder
             ->add('email')
-            ->add('roles')
-            ->add('password')
             ->add('firstName')
             ->add('lastName')
             ->add('birthDate', DateType::class)
             ->add('address')
             ->add('city')
             ->add('alternanceJob')
-            ->add('imageFile', VichImageType::class)
             ->add('groupName', ChoiceType::class)
         ;
     }

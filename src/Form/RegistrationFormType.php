@@ -24,7 +24,6 @@ class RegistrationFormType extends AbstractType
             ->add('email')
             ->add('firstName')
             ->add('lastName')
-            ->add('imageFile', VichImageType::class)
             ->add('birthDate', DateType::class)
             ->add('address')
             ->add('city')
