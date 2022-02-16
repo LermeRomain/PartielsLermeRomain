@@ -4,9 +4,11 @@ namespace App\Entity;
 
 use App\Repository\PostRepository;
 use Doctrine\ORM\Mapping as ORM;
+use Vich\UploaderBundle\Mapping\Annotation as Vich;
 
 /**
  * @ORM\Entity(repositoryClass=PostRepository::class)
+ * * @Vich\Uploadable
  */
 class Post
 {
@@ -32,6 +34,12 @@ class Post
      * @ORM\JoinColumn(nullable=false)
      */
     private $user;
+
+    /**
+     * @ORM\Column(type="integer")
+     */
+    private $Duree;
+
 
     public function getId(): ?int
     {
@@ -70,6 +78,18 @@ class Post
     public function setUser(?User $user): self
     {
         $this->user = $user;
+
+        return $this;
+    }
+
+    public function getDuree(): ?int
+    {
+        return $this->Duree;
+    }
+
+    public function setDuree(int $Duree): self
+    {
+        $this->Duree = $Duree;
 
         return $this;
     }
